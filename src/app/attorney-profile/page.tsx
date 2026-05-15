@@ -17,10 +17,10 @@ export default function AttorneyProfilePage() {
       <section className="section-shell">
         <article className="max-w-4xl rounded border border-line bg-white p-8 shadow-panel">
           <p className="leading-relaxed text-charcoal/90">
-            Wenyu Ding, Esq. represents clients in California family law matters, including divorce, custody, support, property division, domestic violence restraining orders, and settlement negotiations. Her practice is designed for clients who want direct attorney communication, thoughtful case planning, and clear expectations from the start.
+            Wenyu Ding, Esq. represents clients in California family law matters, including divorce, custody, support, property division, domestic violence restraining orders, and settlement negotiations. His practice is designed for clients who want direct attorney communication, thoughtful case planning, and clear expectations from the start.
           </p>
           <p className="mt-5 leading-relaxed text-charcoal/90">
-            She works with clients throughout Santa Clara County and the Bay Area, with attention to the practical realities that shape each matter: timelines, court requirements, financial documentation, and family dynamics. Whether a case is expected to settle or proceed through contested hearings, her approach centers on careful preparation and disciplined decision-making.
+            He works with clients throughout Santa Clara County and the Bay Area, with attention to the practical realities that shape each matter: timelines, court requirements, financial documentation, and family dynamics. Whether a case is expected to settle or proceed through contested hearings, his approach centers on careful preparation and disciplined decision-making.
           </p>
           <p className="mt-5 leading-relaxed text-charcoal/90">
             Clients choose the Law Offices of Wenyu Ding for focused representation and steady guidance during high-stakes transitions. The goal is not unnecessary conflict. The goal is to protect long-term interests with strategy, responsiveness, and credible advocacy.

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-cream text-charcoal antialiased;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  @apply outline-none ring-2 ring-mutedBlue ring-offset-2 ring-offset-cream;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-6xl px-6 py-16 md:px-8 md:py-20;
+}
+
+.eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.18em] text-mutedBlue;
+}

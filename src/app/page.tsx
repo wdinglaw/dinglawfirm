@@ -53,6 +53,27 @@ export default function HomePage() {
       </section>
 
       <section className="border-b border-line bg-white">
+        <div className="section-shell">
+          <p className="eyebrow">Local Resources</p>
+          <h2 className="mt-3 font-display text-3xl text-ink">Family law pages for San Jose and Santa Clara County</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <Link href="/san-jose-divorce-attorney" className="rounded border border-line bg-cream p-6 shadow-panel transition hover:border-mutedBlue">
+              <h3 className="font-display text-2xl text-ink">San Jose Divorce Attorney</h3>
+              <p className="mt-2 text-charcoal/85">
+                Guidance on divorce strategy, filings, support, and property division for San Jose clients.
+              </p>
+            </Link>
+            <Link href="/santa-clara-county-child-custody-attorney" className="rounded border border-line bg-cream p-6 shadow-panel transition hover:border-mutedBlue">
+              <h3 className="font-display text-2xl text-ink">Santa Clara County Child Custody Attorney</h3>
+              <p className="mt-2 text-charcoal/85">
+                Support for custody, visitation, move-away requests, and modification matters.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-line bg-white">
         <div className="section-shell grid gap-6 md:grid-cols-2">
           <div>
             <p className="eyebrow">Is This The Right Fit?</p>

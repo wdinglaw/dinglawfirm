@@ -4,8 +4,10 @@ import ContactForm from "@/components/ContactForm";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Contact the Law Offices of Wenyu Ding to schedule a family law consultation.",
+  title: "Contact - Schedule a Family Law Consultation",
+  description:
+    "Contact the Law Offices of Wenyu Ding in San Jose to request a consultation for divorce, custody, support, and related family law matters.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

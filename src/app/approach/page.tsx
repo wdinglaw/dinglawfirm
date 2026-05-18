@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import PageIntro from "@/components/PageIntro";
 
 export const metadata: Metadata = {
-  title: "Approach",
-  description: "What to expect when working with the Law Offices of Wenyu Ding on a family law matter.",
+  title: "Approach - What to Expect in a Family Law Matter",
+  description:
+    "Learn the firm's process for divorce and custody matters in Santa Clara County, from consultation and planning through resolution.",
+  alternates: { canonical: "/approach" },
 };
 
 const steps = [

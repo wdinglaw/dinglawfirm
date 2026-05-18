@@ -4,7 +4,9 @@ import PageIntro from "@/components/PageIntro";
 
 export const metadata: Metadata = {
   title: "Fees and Consultation",
-  description: "Consultation and fee information for family law representation.",
+  description:
+    "Consultation and fee information for family law representation in Santa Clara County, including appointment policy and retainer expectations.",
+  alternates: { canonical: "/fees-consultation" },
 };
 
 export default function FeesConsultationPage() {

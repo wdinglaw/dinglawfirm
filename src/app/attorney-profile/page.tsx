@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import PageIntro from "@/components/PageIntro";
 
 export const metadata: Metadata = {
-  title: "Attorney Profile",
-  description: "Meet Wenyu Ding, Esq., a boutique family law attorney serving Santa Clara County and the Bay Area.",
+  title: "Attorney Profile - Wenyu Ding, Esq.",
+  description:
+    "Meet Wenyu Ding, Esq., a San Jose family law attorney focused on strategic divorce and custody representation in Santa Clara County.",
+  alternates: { canonical: "/attorney-profile" },
 };
 
 export default function AttorneyProfilePage() {

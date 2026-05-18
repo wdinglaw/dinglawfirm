@@ -5,6 +5,12 @@ export const site = {
   phoneLink: "tel:+14083208182",
   email: "wding@dinglawfirm.com",
   location: "Milpitas / San Jose / Santa Clara County, California",
+  addressLocality: "San Jose",
+  addressRegion: "CA",
+  postalCode: "95100",
+  addressCountry: "US",
+  serviceAreas: ["San Jose", "Milpitas", "Santa Clara County", "Bay Area"],
+  baseUrl: "https://www.dinglawfirm.com",
 };
 
 export const practiceAreas = [

@@ -4,6 +4,8 @@ import { site } from "@/data/site";
 const links = [
   ["Home", "/"],
   ["Practice Areas", "/practice-areas"],
+  ["San Jose Divorce", "/san-jose-divorce-attorney"],
+  ["Custody - Santa Clara County", "/santa-clara-county-child-custody-attorney"],
   ["Attorney Profile", "/attorney-profile"],
   ["Approach", "/approach"],
   ["Fees / Consultation", "/fees-consultation"],

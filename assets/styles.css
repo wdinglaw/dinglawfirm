@@ -1,12 +1,15 @@
 :root {
-  --bg: #f8f8f6;
-  --surface: #ffffff;
-  --text: #1c1c1c;
-  --muted: #555;
-  --accent: #1f2a44;
-  --border: #e7e5df;
-  --shadow: 0 8px 24px rgba(31, 42, 68, 0.06);
-  --radius: 12px;
+  --bg: #f7f5f0;
+  --surface: #fffdfa;
+  --surface-strong: #101820;
+  --text: #171717;
+  --muted: #5f5b55;
+  --accent: #5d1725;
+  --accent-strong: #2a1017;
+  --gold: #a98349;
+  --border: #ded6c8;
+  --shadow: 0 18px 44px rgba(16, 24, 32, 0.08);
+  --radius: 8px;
   --container: 1120px;
 }
 
@@ -21,7 +24,10 @@ html {
 body {
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--bg);
+  background:
+    linear-gradient(90deg, rgba(169, 131, 73, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, #fbfaf7 0%, var(--bg) 360px);
+  background-size: 88px 88px, auto;
   color: var(--text);
   line-height: 1.65;
 }
@@ -69,8 +75,8 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(248, 248, 246, 0.95);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 253, 250, 0.94);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -90,14 +96,16 @@ img {
 .brand-name {
   display: block;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.55rem;
-  letter-spacing: 0.2px;
+  font-size: 1.45rem;
+  letter-spacing: 0;
   font-weight: 700;
 }
 
 .brand-sub {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--muted);
   margin-top: -0.15rem;
 }
@@ -106,7 +114,7 @@ img {
   display: none;
   border: 1px solid var(--border);
   background: var(--surface);
-  border-radius: 10px;
+  border-radius: var(--radius);
   padding: 0.5rem 0.75rem;
   cursor: pointer;
 }
@@ -114,36 +122,47 @@ img {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.05rem;
 }
 
 .site-nav a {
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
+  font-size: 0.92rem;
 }
 
 .site-nav a[aria-current="page"] {
   color: var(--accent);
 }
 
+.site-nav a:not(.btn):hover {
+  color: var(--accent);
+}
+
+.site-nav a.btn {
+  color: #fffdfa;
+}
+
 .btn,
 .btn-outline {
   display: inline-block;
   text-decoration: none;
-  padding: 0.72rem 1.1rem;
-  border-radius: 10px;
+  padding: 0.74rem 1rem;
+  border-radius: var(--radius);
   border: 1px solid transparent;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 .btn {
   background: var(--accent);
   color: #fff;
+  box-shadow: 0 10px 24px rgba(93, 23, 37, 0.16);
 }
 
 .btn:hover {
-  background: #172036;
+  background: var(--accent-strong);
 }
 
 .btn-outline {
@@ -158,7 +177,14 @@ img {
 
 .hero,
 .section {
-  padding: 4.25rem 0;
+  padding: 4.75rem 0;
+}
+
+.hero {
+  min-height: calc(100vh - 82px);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-grid,
@@ -171,29 +197,35 @@ img {
 }
 
 .hero-grid {
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.82fr);
   align-items: center;
+  gap: clamp(2rem, 5vw, 4.25rem);
 }
 
 h1,
 h2,
 h3 {
   font-family: "Cormorant Garamond", Georgia, serif;
-  line-height: 1.2;
+  line-height: 1.05;
   color: var(--text);
   margin: 0 0 0.85rem;
+  letter-spacing: 0;
 }
 
 h1 {
-  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-size: clamp(2.65rem, 5.25vw, 4.8rem);
+}
+
+.hero h1 {
+  max-width: 11ch;
 }
 
 h2 {
-  font-size: clamp(1.6rem, 2.9vw, 2.2rem);
+  font-size: clamp(1.75rem, 3vw, 2.65rem);
 }
 
 h3 {
-  font-size: clamp(1.3rem, 2.3vw, 1.7rem);
+  font-size: clamp(1.18rem, 2.2vw, 1.55rem);
 }
 
 p,
@@ -210,11 +242,23 @@ li {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 1.35rem;
+  padding: 1.45rem;
 }
 
 .cards {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.cards .card,
+.cards.three .card {
+  min-height: 100%;
+  box-shadow: none;
+}
+
+.cards .card h3,
+.cards.three .card h2 {
+  border-top: 2px solid var(--gold);
+  padding-top: 0.9rem;
 }
 
 .cards.three {
@@ -223,9 +267,9 @@ li {
 
 .kicker {
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.78rem;
-  color: var(--accent);
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: var(--gold);
   font-weight: 600;
 }
 
@@ -243,10 +287,10 @@ li {
 }
 
 .cta-band {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: #fffdfa;
   border-radius: var(--radius);
-  padding: 1.6rem;
+  padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -254,10 +298,107 @@ li {
   gap: 1rem;
 }
 
+.cta-band h2,
+.cta-band .muted {
+  color: #fffdfa;
+}
+
+.cta-band .btn {
+  background: #fffdfa;
+  color: var(--accent-strong);
+  box-shadow: none;
+}
+
+.boutique-panel,
+.profile-panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-strong);
+  color: #fffdfa;
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  box-shadow: 0 22px 60px rgba(16, 24, 32, 0.18);
+}
+
+.boutique-panel::before,
+.profile-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(169, 131, 73, 0.28), transparent 36%),
+    repeating-linear-gradient(90deg, rgba(255, 253, 250, 0.05) 0 1px, transparent 1px 28px);
+  pointer-events: none;
+}
+
+.boutique-panel > *,
+.profile-panel > * {
+  position: relative;
+}
+
+.panel-label {
+  color: #d9bf8f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.panel-rule {
+  width: 58px;
+  height: 2px;
+  background: var(--gold);
+  margin: 1rem 0 1.25rem;
+}
+
+.panel-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.1rem 0 0;
+}
+
+.panel-item {
+  border-top: 1px solid rgba(255, 253, 250, 0.22);
+  padding-top: 0.85rem;
+}
+
+.panel-item strong {
+  display: block;
+  color: #fffdfa;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem;
+  line-height: 1.05;
+  margin-bottom: 0.25rem;
+}
+
+.panel-item span,
+.boutique-panel p,
+.profile-panel p {
+  color: rgba(255, 253, 250, 0.78);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.intro-copy {
+  max-width: 62ch;
+  font-size: 1.08rem;
+}
+
 .site-footer {
   margin-top: 3rem;
   border-top: 1px solid var(--border);
-  background: #f4f4f1;
+  background: #171717;
+  color: rgba(255, 253, 250, 0.78);
+}
+
+.site-footer h3,
+.site-footer a {
+  color: #fffdfa;
 }
 
 .footer-grid {
@@ -291,7 +432,7 @@ textarea {
   margin-top: 0.35rem;
   padding: 0.62rem 0.68rem;
   border: 1px solid #d6d2c8;
-  border-radius: 10px;
+  border-radius: var(--radius);
   background: #fff;
   color: var(--text);
   font: inherit;
@@ -314,7 +455,7 @@ textarea {
 }
 
 .warning {
-  background: #f9f7f2;
+  background: #fffdfa;
   border: 1px solid #e8e2d4;
   border-radius: var(--radius);
   padding: 0.9rem 1rem;
@@ -330,7 +471,7 @@ textarea {
   .cards.three,
   .footer-grid,
   .form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .mobile-toggle {
@@ -354,5 +495,29 @@ textarea {
 
   .site-nav.is-open {
     display: flex;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: clamp(2.35rem, 14vw, 3.25rem);
+  }
+
+  .hero,
+  .section {
+    padding: 3.25rem 0;
+  }
+
+  .boutique-panel,
+  .profile-panel {
+    padding: 1.25rem;
   }
 }

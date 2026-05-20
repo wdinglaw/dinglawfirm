@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Office placeholder image">
+  <rect width="1200" height="720" fill="#eceae4"/>
+  <rect x="120" y="100" width="960" height="520" rx="16" fill="#f8f8f6" stroke="#d9d5cb"/>
+  <text x="600" y="370" text-anchor="middle" font-size="42" font-family="Georgia, serif" fill="#1f2a44">Office Image Placeholder</text>
+</svg>

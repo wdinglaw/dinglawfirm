@@ -362,10 +362,11 @@ li {
 }
 
 .service-card {
-  min-height: 285px;
+  min-height: 255px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1.05rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -380,17 +381,9 @@ li {
   box-shadow: var(--shadow);
 }
 
-.card-index {
-  color: var(--gold);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-}
-
 .service-card h3 {
-  border-top: 1px solid var(--border);
-  padding-top: 1.05rem;
-  margin-top: auto;
+  max-width: 12rem;
+  margin-bottom: 0;
 }
 
 .service-card p {

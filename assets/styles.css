@@ -27,11 +27,12 @@ body {
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
-    linear-gradient(90deg, rgba(169, 128, 69, 0.045) 1px, transparent 1px),
-    linear-gradient(180deg, #fffdf8 0%, var(--bg) 520px);
+    linear-gradient(90deg, rgba(169, 128, 69, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, #fffdf8 0%, var(--bg) 560px);
   background-size: 88px 88px, auto;
   color: var(--text);
   line-height: 1.65;
+  overflow-x: hidden;
 }
 
 a {
@@ -207,12 +208,12 @@ main > section {
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--border);
-  padding: clamp(3.25rem, 6vw, 5.5rem) 0;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
 }
 
 .hero-editorial {
   background:
-    radial-gradient(circle at 78% 18%, rgba(169, 128, 69, 0.12), transparent 28%),
+    linear-gradient(90deg, rgba(16, 26, 35, 0.05), transparent 42%),
     linear-gradient(180deg, rgba(255, 253, 248, 0.86), rgba(246, 242, 234, 0.9));
 }
 
@@ -226,9 +227,13 @@ main > section {
 }
 
 .hero-grid {
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+  grid-template-columns: minmax(0, 0.88fr) minmax(360px, 1.12fr);
   align-items: center;
-  gap: clamp(2rem, 5vw, 4.25rem);
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.hero-copy {
+  min-width: 0;
 }
 
 h1,
@@ -242,11 +247,11 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.65rem, 4.8vw, 4.55rem);
+  font-size: clamp(2.55rem, 4.25vw, 4.25rem);
 }
 
 .hero h1 {
-  max-width: 12.5ch;
+  max-width: 15ch;
 }
 
 h2 {
@@ -357,12 +362,12 @@ li {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
 .service-card {
-  min-height: 255px;
+  min-height: 245px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -382,7 +387,7 @@ li {
 }
 
 .service-card h3 {
-  max-width: 12rem;
+  max-width: 13rem;
   margin-bottom: 0;
 }
 
@@ -640,6 +645,136 @@ li {
   font-size: 1.08rem;
 }
 
+.hero-visual {
+  position: relative;
+  margin: 0;
+  min-height: clamp(400px, 46vw, 560px);
+  border-radius: 22px 22px 22px 80px;
+  overflow: hidden;
+  border: 1px solid rgba(223, 213, 197, 0.88);
+  box-shadow: 0 30px 80px rgba(16, 26, 35, 0.16);
+  background: var(--navy);
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(16, 26, 35, 0.02), rgba(16, 26, 35, 0.22)),
+    linear-gradient(90deg, rgba(16, 26, 35, 0.15), transparent 52%);
+  pointer-events: none;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-visual figcaption {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 1;
+  width: min(315px, calc(100% - 2rem));
+  padding: 1rem;
+  border: 1px solid rgba(255, 253, 248, 0.36);
+  border-radius: var(--radius);
+  background: rgba(16, 26, 35, 0.82);
+  color: #fffdfa;
+  backdrop-filter: blur(14px);
+}
+
+.hero-visual figcaption span {
+  display: block;
+  color: #d8bd8a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.hero-visual figcaption strong {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.25rem, 2vw, 1.58rem);
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.proof-band {
+  padding: 1.2rem 0 0;
+  background: linear-gradient(180deg, var(--surface), rgba(255, 253, 248, 0));
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.proof-grid article {
+  min-height: 138px;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(16, 26, 35, 0.045);
+}
+
+.proof-grid span {
+  display: block;
+  color: var(--accent);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 0.55rem;
+}
+
+.proof-grid p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.text-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+}
+
+.counsel-section {
+  position: relative;
+}
+
+.counsel-section::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: min(28vw, 380px);
+  background: linear-gradient(180deg, rgba(169, 128, 69, 0.14), rgba(104, 23, 39, 0.05));
+  pointer-events: none;
+}
+
+.counsel-section > * {
+  position: relative;
+}
+
+.location-feature {
+  background: #fffdf8;
+  border-block: 1px solid var(--border);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
 .site-footer {
   margin-top: 3rem;
   border-top: 1px solid var(--border);
@@ -729,6 +864,8 @@ textarea {
   .cards,
   .cards.three,
   .service-grid,
+  .proof-grid,
+  .location-grid,
   .process-grid,
   .split-feature,
   .bio-preview,
@@ -772,11 +909,49 @@ textarea {
   .hero h1 {
     max-width: 100%;
   }
+
+  .hero-visual {
+    min-height: 420px;
+    border-radius: 16px 16px 16px 54px;
+  }
+
+  .counsel-section::before {
+    width: 100%;
+    height: 180px;
+    inset: 0 0 auto;
+  }
 }
 
 @media (max-width: 640px) {
+  .container {
+    width: min(100% - 2rem, 350px);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand-name {
+    font-size: 1.16rem;
+  }
+
+  .brand-sub {
+    font-size: 0.62rem;
+  }
+
+  .mobile-toggle {
+    flex: 0 0 auto;
+  }
+
   h1 {
-    font-size: clamp(2.35rem, 14vw, 3.25rem);
+    font-size: clamp(2.05rem, 9vw, 2.38rem);
+    overflow-wrap: break-word;
+  }
+
+  .intro-copy {
+    font-size: 1rem;
   }
 
   .hero,
@@ -802,12 +977,23 @@ textarea {
   .trust-grid span {
     min-height: 58px;
     padding: 0.5rem;
-    font-size: 0.68rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
   }
 
   .service-card,
   .process-grid li {
     min-height: auto;
+  }
+
+  .hero-visual {
+    min-height: 330px;
+  }
+
+  .hero-visual figcaption {
+    right: 0.8rem;
+    bottom: 0.8rem;
+    width: calc(100% - 1.6rem);
   }
 
   .process-grid li::before {
@@ -817,5 +1003,8 @@ textarea {
   .boutique-panel,
   .profile-panel {
     padding: 1.25rem;
+  }
+  .hero-visual figcaption {
+    width: calc(100% - 1.6rem);
   }
 }

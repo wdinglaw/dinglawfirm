@@ -779,19 +779,9 @@ li {
 
 .counsel-section {
   position: relative;
-}
-
-.counsel-section::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: min(28vw, 380px);
-  background: linear-gradient(180deg, rgba(169, 128, 69, 0.14), rgba(104, 23, 39, 0.05));
-  pointer-events: none;
-}
-
-.counsel-section > * {
-  position: relative;
+  background:
+    linear-gradient(90deg, rgba(169, 128, 69, 0.08), rgba(255, 253, 248, 0.46) 34%, rgba(255, 253, 248, 0.58) 100%),
+    linear-gradient(180deg, rgba(255, 253, 248, 0.68), rgba(246, 242, 234, 0.82));
 }
 
 .location-feature {
@@ -968,10 +958,9 @@ textarea {
     border-radius: 12px 12px 12px 24px;
   }
 
-  .counsel-section::before {
-    width: 100%;
-    height: 180px;
-    inset: 0 0 auto;
+  .counsel-section {
+    background:
+      linear-gradient(180deg, rgba(255, 253, 248, 0.72), rgba(246, 242, 234, 0.86));
   }
 }
 

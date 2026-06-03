@@ -663,6 +663,10 @@ li {
   align-items: start;
 }
 
+.content-narrow {
+  max-width: 780px;
+}
+
 .article-body {
   max-width: 780px;
 }
@@ -1003,6 +1007,15 @@ li {
 form {
   display: grid;
   gap: 0.85rem;
+}
+
+.form-honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 label {

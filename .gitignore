@@ -3,3 +3,10 @@ node_modules
 out
 .DS_Store
 .env*
+credentials.json
+token.json
+billing_outputs/
+michael_amatt_review_outputs/
+*.csv
+*.xlsx
+*.pdf

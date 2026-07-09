@@ -19,19 +19,14 @@ This is a static HTML/CSS/JS website designed for GitHub Pages hosting.
 
 ## How to preview locally
 
-1. Open the `site` folder.
-2. Double-click `index.html` to open in your browser.
-3. Click through the navigation to verify all pages.
+Use a local server instead of double-clicking `index.html`. Opening files directly with `file://` can expose local machine paths and can make directory-style links behave differently from the deployed site.
 
-Optional local server:
-
-1. Open Terminal.
-2. Run:
+1. From the website root, run:
    ```bash
-   cd /Users/davidding/Documents/Website/site
    python3 -m http.server 8000
    ```
-3. Open `http://localhost:8000`.
+2. Open `http://localhost:8000`.
+3. Click through the navigation to verify all pages.
 
 ## Publish to GitHub Pages (easy steps)
 

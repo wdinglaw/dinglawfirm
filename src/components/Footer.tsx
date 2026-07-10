@@ -1,5 +1,7 @@
 import { site } from "@/data/site";
 
+const footerEmail = "contact@dinglawfirm.com";
+
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-white">
@@ -12,7 +14,7 @@ export default function Footer() {
               Phone: <a className="text-mutedBlue" href={site.phoneLink}>{site.phoneDisplay}</a>
             </p>
             <p className="text-sm">
-              Email: <a className="text-mutedBlue" href={`mailto:${site.email}`}>{site.email}</a>
+              Email: <a className="text-mutedBlue" href={`mailto:${footerEmail}`}>{footerEmail}</a>
             </p>
           </div>
           <div className="text-sm leading-relaxed text-charcoal/80">

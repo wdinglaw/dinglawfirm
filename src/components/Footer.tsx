@@ -1,6 +1,6 @@
 import { site } from "@/data/site";
 
-const footerEmail = "intake@dinglawgroup.com";
+const footerEmail = "contact@dinglawfirm.com";
 
 export default function Footer() {
   return (

@@ -520,20 +520,17 @@ li {
 }
 
 .local-link-grid,
-.insight-grid,
-.profile-link-grid {
+.insight-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-.local-link-grid,
-.profile-link-grid {
+.local-link-grid {
   margin-top: 1.25rem;
 }
 
 .local-link-grid a,
-.profile-link-grid a,
 .insight-card {
   display: block;
   height: 100%;
@@ -550,17 +547,11 @@ li {
   font-weight: 700;
 }
 
-.local-link-grid a span,
-.profile-link-grid a span {
+.local-link-grid a span {
   display: block;
   color: var(--muted);
   font-weight: 400;
   margin-top: 0.35rem;
-}
-
-.profile-link-grid a {
-  color: var(--text);
-  font-weight: 700;
 }
 
 .insight-card h2 {

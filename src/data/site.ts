@@ -3,7 +3,7 @@ export const site = {
   attorney: "Wenyu Ding, Esq.",
   phoneDisplay: "(408) 320-8182",
   phoneLink: "tel:+14083208182",
-  email: "wding@dinglawfirm.com",
+  email: "contact@dinglawgroup.com",
   location: "Milpitas / San Jose / Santa Clara County, California",
   addressLocality: "San Jose",
   addressRegion: "CA",

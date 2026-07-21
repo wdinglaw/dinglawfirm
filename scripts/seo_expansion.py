@@ -35,7 +35,7 @@ def legal_schema(extra: list[str] | None = None) -> str:
         "name": "Law Offices of Wenyu Ding",
         "url": BASE,
         "telephone": "+1-408-320-8182",
-        "email": "wding@dinglawgroup.com",
+        "email": "contact@dinglawgroup.com",
         "image": f"{BASE}/assets/wenyu-ding-logo-small.jpg",
         "address": {
             "@type": "PostalAddress",

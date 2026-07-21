@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message:
-          "Form capture is enabled, but outbound delivery is not configured yet. Please call (408) 320-8182 or email wding@dinglawfirm.com.",
+          "Form capture is enabled, but outbound delivery is not configured yet. Please call (408) 320-8182 or email contact@dinglawgroup.com.",
       },
       { status: 200 },
     );

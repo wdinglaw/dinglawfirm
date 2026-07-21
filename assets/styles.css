@@ -808,7 +808,9 @@ li {
 }
 
 .recognition-section {
-  padding-top: clamp(3rem, 6vw, 5rem);
+  background: var(--navy);
+  border-block: 0;
+  padding: clamp(4rem, 7vw, 6rem) clamp(1.5rem, 3vw, 3rem);
 }
 
 .recognition-panel {
@@ -816,10 +818,10 @@ li {
   grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
   gap: clamp(1.75rem, 4vw, 3.25rem);
   align-items: center;
-  background: rgba(255, 253, 248, 0.82);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: 0 20px 60px rgba(16, 24, 36, 0.06);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
   padding: clamp(1.25rem, 3vw, 2.25rem);
 }
 
@@ -1609,6 +1611,10 @@ textarea {
 
   .recognition-panel {
     padding: 1rem;
+  }
+
+  .recognition-section {
+    padding: clamp(2.5rem, 10vw, 3.5rem) 1rem;
   }
 
   .recognition-badge {

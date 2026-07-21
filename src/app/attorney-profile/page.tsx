@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PageIntro from "@/components/PageIntro";
 
 export const metadata: Metadata = {
-  title: "Attorney Profile - Wenyu David Ding, Esq.",
+  title: "Attorney Profile - Wenyu Ding, Esq.",
   description:
-    "Meet Wenyu David Ding, Esq., founder and California family law attorney focused on divorce, custody, support, property division, and family law litigation.",
+    "Meet Wenyu Ding, Esq., founder and California family law attorney focused on divorce, custody, support, property division, and family law litigation.",
   alternates: { canonical: "/attorney-profile" },
 };
 
@@ -13,13 +13,13 @@ export default function AttorneyProfilePage() {
     <>
       <PageIntro
         eyebrow="Attorney"
-        title="Wenyu “David” Ding, Esq."
+        title="Wenyu Ding, Esq."
         description="Founder and California Family Law Attorney"
       />
       <section className="section-shell">
         <article className="max-w-5xl rounded border border-line bg-white p-8 shadow-panel">
           <p className="leading-relaxed text-charcoal/90">
-            Wenyu “David” Ding is a California family law attorney and founder of the Law Offices of Wenyu Ding. His practice focuses on divorce, child custody and visitation, child and spousal support, property division, domestic violence restraining orders, and prenuptial and postnuptial agreements.
+            Wenyu Ding is a California family law attorney and founder of the Law Offices of Wenyu Ding. His practice focuses on divorce, child custody and visitation, child and spousal support, property division, domestic violence restraining orders, and prenuptial and postnuptial agreements.
           </p>
           <p className="mt-5 leading-relaxed text-charcoal/90">
             Mr. Ding represents clients in both negotiated and contested family law matters, including cases involving high-conflict custody disputes, complex financial and disclosure issues, support claims, move-away requests, and the characterization and division of marital property. He works with professionals, business owners, dual-income households, and other clients facing legal disputes with significant personal and financial consequences.

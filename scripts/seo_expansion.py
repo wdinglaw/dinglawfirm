@@ -90,7 +90,6 @@ NAV = """<header class="site-header" aria-label="Main header">
         <a href="/spousal-support-attorney-santa-clara-county/">Support</a>
         <a href="/high-asset-divorce.html">High-Asset Divorce</a>
         <a href="/insights.html">Insights</a>
-        <a href="/reviews-recognition.html">Reviews &amp; Recognition</a>
         <a class="btn" href="/consultation.html">Contact / Schedule</a>
       </nav>
     </div>
@@ -99,10 +98,10 @@ NAV = """<header class="site-header" aria-label="Main header">
 
 FOOTER = """<footer class="site-footer">
     <div class="container footer-grid">
-      <div class="footer-brand-block"><h3>Law Offices of Wenyu Ding</h3><p class="footer-descriptor">Bay Area family law counsel</p><p>1525 McCarthy Blvd, Ste 1077, Milpitas, CA 95035-7451</p><p><a href="tel:4083208182">408-320-8182</a> | <a href="mailto:wding@dinglawgroup.com">wding@dinglawgroup.com</a></p></div>
+      <div class="footer-brand-block"><h3>Law Offices of Wenyu Ding</h3><p class="footer-descriptor">Bay Area family law counsel</p><p>1525 McCarthy Blvd, Ste 1077, Milpitas, CA 95035-7451</p><p><a href="tel:4083208182">408-320-8182</a> | <a href="mailto:contact@dinglawgroup.com">contact@dinglawgroup.com</a></p></div>
       <div><h3>Main Practice Pages</h3><p><a href="/san-jose-divorce-lawyer/">Divorce</a></p><p><a href="/san-jose-child-custody-lawyer/">Child Custody</a></p><p><a href="/spousal-support-attorney-santa-clara-county/">Support</a></p><p><a href="/property-division-lawyer-california/">Property Division</a></p><p><a href="/high-asset-divorce.html">High-Asset Divorce</a></p></div>
       <div><h3>Local Pages</h3><p><a href="/milpitas-family-law-attorney/">Milpitas Family Law</a></p><p><a href="/san-jose-family-law-attorney/">San Jose Family Law</a></p><p><a href="/santa-clara-county-divorce-lawyer/">Santa Clara County Divorce</a></p><p><a href="/sunnyvale-divorce-attorney.html">Sunnyvale Divorce</a></p><p><a href="/palo-alto-divorce-attorney.html">Palo Alto Divorce</a></p></div>
-      <div><h3>Resources</h3><p><a href="/insights.html">Insights</a></p><p><a href="/reviews-recognition.html">Reviews &amp; Recognition</a></p><p><a href="/consultation.html">Consultation</a></p><p><a href="/contact.html">Contact</a></p><p><a href="/privacy.html">Privacy Policy</a></p><p><a href="/disclaimer.html">Disclaimer</a></p></div>
+      <div><h3>Resources</h3><p><a href="/insights.html">Insights</a></p><p><a href="/consultation.html">Consultation</a></p><p><a href="/contact.html">Contact</a></p><p><a href="/privacy.html">Privacy Policy</a></p><p><a href="/disclaimer.html">Disclaimer</a></p></div>
     </div>
     <div class="container footer-bottom">Attorney advertising. Prior outcomes, reviews, or recognition do not guarantee similar results. Information on this site is not legal advice and does not create an attorney-client relationship. A consultation and signed engagement agreement are required before legal advice or representation begins. See <a href="/disclaimer.html">Disclaimer</a> and <a href="/privacy.html">Privacy Policy</a>.</div>
   </footer>
@@ -312,15 +311,6 @@ def article_body(title: str, full: bool) -> str:
     return f"""<section class="section"><div class="container content-layout"><article class="article-body"><p class="note">Updated July 8, 2026</p>{ps}<h2>Related resources</h2><p><a class="text-link" href="/rsu-stock-option-divorce-lawyer.html">RSU and Stock Option Divorce</a> | <a class="text-link" href="/high-asset-divorce-silicon-valley.html">High-Asset Divorce</a> | <a class="text-link" href="/child-custody-attorney-san-jose.html">Child Custody</a> | <a class="text-link" href="/consultation.html">Consultation</a></p></article><aside class="card"><h2>Informational only</h2><p>This article is not legal advice and does not create an attorney-client relationship.</p></aside></div></section>"""
 
 
-def generate_reviews() -> None:
-    body = f"""<section class="section"><div class="container content-layout"><article class="article-body">
-      <p>The Law Offices of Wenyu Ding does not publish fabricated testimonials or invented review excerpts. Prospective clients may review public profile pages once approved URLs are added by the firm.</p>
-      <section class="recognition-panel section"><div class="recognition-badge"><img src="/assets/client-champion-gold.webp" alt="Martindale-Hubbell Client Champion Gold Award badge" width="877" height="400" loading="lazy" /></div><div class="recognition-copy"><p class="kicker">Recognition</p><h2>Martindale-Hubbell Client Champion Award - Gold</h2><p>The Client Champion Gold recognition is referenced in the existing site content and badge asset. Reviews and recognition are provided for informational purposes only. Prior results, reviews, or recognition do not guarantee a similar outcome in any future matter.</p></div></section>
-      <section class="card section"><h2>Client Review Links</h2><p>Approved public review/profile URLs should be added here when available.</p><ul class="list-tight"><li><!-- TODO: Add approved Martindale-Hubbell / Lawyers.com URL. -->Martindale-Hubbell / Lawyers.com profile</li><li><!-- TODO: Add approved Avvo URL. -->Avvo profile</li><li><!-- TODO: Add approved Google Business Profile URL. -->Google Business Profile</li></ul></section>
-    </article><aside class="card"><h2>Ethics Note</h2><p>Reviews and recognition are informational only. No result can be guaranteed, and each matter depends on its own facts, law, documents, court posture, and available evidence.</p></aside></div></section>"""
-    page("reviews-recognition.html", "Reviews & Recognition | Law Offices of Wenyu Ding", "Reviews and recognition information for the Law Offices of Wenyu Ding, including verified recognition and placeholders for approved profile links.", "Reviews and Recognition", "Client Review Links", body, COMMON_FAQS[:3], ["reviews", "recognition"])
-
-
 def generate_articles() -> None:
     cards = []
     for i, (slug, title, desc) in enumerate(ARTICLE_TOPICS):
@@ -365,7 +355,6 @@ def update_sitemap() -> None:
         "practice-areas.html",
         "consultation.html",
         "contact.html",
-        "reviews-recognition.html",
         "high-asset-divorce.html",
         "disclaimer.html",
         "privacy.html",
@@ -400,7 +389,6 @@ def main() -> None:
         page(path, title, desc, h1, kicker, practice_body(h1, focus), COMMON_FAQS, focus)
     for path, title, desc, h1, kicker, context in LOCAL_PAGES:
         page(path, title, desc, h1, kicker, local_body(context), COMMON_FAQS, ["local family law", h1])
-    generate_reviews()
     generate_articles()
     update_homepage()
     update_sitemap()

@@ -720,6 +720,113 @@ li {
   align-items: center;
 }
 
+.about-main {
+  padding-top: clamp(3.25rem, 6vw, 5.5rem);
+}
+
+.about-intro {
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.about-intro h1 {
+  max-width: 12ch;
+}
+
+.attorney-bio-section {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.38fr) minmax(0, 0.62fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.attorney-photo {
+  position: sticky;
+  top: 6rem;
+  margin: 0;
+}
+
+.attorney-photo img {
+  display: block;
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: var(--radius);
+  border: 1px solid rgba(137, 109, 58, 0.22);
+  box-shadow: 0 22px 56px rgba(16, 24, 32, 0.14);
+  background: var(--surface);
+}
+
+.attorney-bio-content {
+  min-width: 0;
+}
+
+.attorney-bio-content h2 {
+  margin-bottom: 0.35rem;
+}
+
+.attorney-title {
+  color: var(--accent-strong);
+  font-weight: 700;
+  margin-bottom: 1.35rem;
+}
+
+.attorney-bio-copy {
+  max-width: 76ch;
+}
+
+.attorney-bio-copy p {
+  margin-bottom: 1rem;
+}
+
+.credential-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: clamp(1.35rem, 3vw, 2rem);
+}
+
+.credential-block {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 248, 0.76);
+  padding: 1rem 1.05rem;
+}
+
+.credential-block h3 {
+  margin-bottom: 0.55rem;
+  font-size: 1rem;
+  color: var(--accent-strong);
+}
+
+.credential-block ul {
+  margin: 0;
+  padding-left: 1.05rem;
+}
+
+.credential-block li {
+  margin: 0.28rem 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.48;
+}
+
+.credential-wide {
+  grid-column: 1 / -1;
+}
+
+.credential-columns {
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.attorney-actions {
+  align-items: center;
+  margin-top: 1.6rem;
+}
+
 .recognition-section {
   padding-top: clamp(3rem, 6vw, 5rem);
 }
@@ -1348,6 +1455,7 @@ textarea {
   .process-grid,
   .split-feature,
   .bio-preview,
+  .attorney-bio-section,
   .recognition-panel,
   .faq-wrap,
   .footer-grid,
@@ -1397,6 +1505,15 @@ textarea {
 
   .recognition-panel {
     text-align: left;
+  }
+
+  .attorney-photo {
+    position: static;
+    max-width: 430px;
+  }
+
+  .attorney-bio-copy {
+    max-width: none;
   }
 
   .recognition-badge {
@@ -1523,6 +1640,22 @@ textarea {
 
   .recognition-badge img {
     width: min(100%, 240px);
+  }
+
+  .credential-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credential-columns {
+    columns: 1;
+  }
+
+  .attorney-photo {
+    width: min(100%, 320px);
+  }
+
+  .attorney-actions {
+    align-items: stretch;
   }
 
   .process-grid li::before {

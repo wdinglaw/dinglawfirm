@@ -80,6 +80,10 @@ img {
   margin: 0 auto;
 }
 
+.site-header .container {
+  width: min(1280px, 94%);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -93,8 +97,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 0.9rem 0;
+  gap: 0.9rem;
+  padding: 0.82rem 0;
 }
 
 .brand {
@@ -103,6 +107,8 @@ img {
   gap: 0.72rem;
   text-decoration: none;
   color: var(--text);
+  flex: 0 1 330px;
+  min-width: 250px;
 }
 
 .brand-mark {
@@ -157,14 +163,19 @@ img {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 1.05rem;
+  justify-content: flex-end;
+  gap: 0.72rem;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .site-nav a {
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
-  font-size: 0.92rem;
+  font-size: 0.84rem;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .site-nav a[aria-current="page"] {
@@ -177,6 +188,7 @@ img {
 
 .site-nav a.btn {
   color: #fffdfa;
+  padding: 0.62rem 0.78rem;
 }
 
 .btn,
@@ -1241,6 +1253,84 @@ textarea {
   border-left: 1px solid rgba(255, 253, 248, 0.28);
 }
 
+@media (max-width: 1180px) {
+  .site-header .container {
+    width: min(100% - 1.5rem, 1180px);
+  }
+
+  .nav-row {
+    gap: 0.65rem;
+  }
+
+  .brand {
+    flex-basis: 280px;
+    min-width: 225px;
+    gap: 0.6rem;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 1.04rem;
+  }
+
+  .brand-sub {
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+  }
+
+  .site-nav {
+    gap: 0.48rem;
+  }
+
+  .site-nav a {
+    font-size: 0.78rem;
+  }
+
+  .site-nav a.btn {
+    padding: 0.58rem 0.65rem;
+  }
+}
+
+@media (max-width: 1040px) {
+  .mobile-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    right: 4%;
+    top: 76px;
+    width: min(330px, 92vw);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    font-size: 0.92rem;
+  }
+
+  .site-nav a.btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.72rem 0.85rem;
+  }
+}
+
 @media (max-width: 980px) {
   .hero-grid,
   .two-col,
@@ -1267,29 +1357,6 @@ textarea {
 
   .trust-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .mobile-toggle {
-    display: inline-flex;
-  }
-
-  .site-nav {
-    display: none;
-    position: absolute;
-    right: 4%;
-    top: 76px;
-    width: min(280px, 92vw);
-    flex-direction: column;
-    align-items: flex-start;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1rem;
-    box-shadow: var(--shadow);
-  }
-
-  .site-nav.is-open {
-    display: flex;
   }
 
   .hero {

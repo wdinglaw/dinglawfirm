@@ -28,9 +28,6 @@ export default function AttorneyProfilePage() {
             Mr. Ding has family law trial experience and has successfully obtained permanent restraining orders and orders awarding sole legal and physical custody. He approaches each matter with careful preparation, practical strategy, and close attention to the facts and circumstances affecting the client and the client’s family.
           </p>
           <p className="mt-5 leading-relaxed text-charcoal/90">
-            Before establishing his own practice, Mr. Ding worked as a civil defense litigator representing corporate clients in matters involving complex tort claims and automobile accidents. This prior litigation experience strengthened his ability to analyze detailed factual records, evaluate risk, manage contested proceedings, and advocate effectively in court.
-          </p>
-          <p className="mt-5 leading-relaxed text-charcoal/90">
             Known for his direct communication and detail-driven approach, Mr. Ding works closely with clients to identify their priorities, understand their legal options, and develop a strategy suited to the circumstances of the case. He is committed to providing compassionate, fair, and effective representation while helping clients navigate difficult legal proceedings with greater clarity and confidence.
           </p>
           <p className="mt-5 leading-relaxed text-charcoal/90">

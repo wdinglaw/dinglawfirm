@@ -17,16 +17,16 @@ DISCLAIMER = (
 )
 
 
-def render_preview_rating():
+def render_rating(score):
     star = "M8 0.7 10.2 5.3 15.3 6 11.6 9.6 12.5 14.7 8 12.3 3.5 14.7 4.4 9.6 0.7 6 5.8 5.3Z"
     stars = "".join(
         f'<path d="{star}" transform="translate({offset} 0)"/>'
-        for offset in range(0, 90, 18)
+        for offset in range(0, score * 18, 18)
     )
     return (
         '            <p class="testimonial-rating">\n'
         f'              <svg viewBox="0 0 88 16" width="88" height="16" aria-hidden="true" focusable="false">{stars}</svg>\n'
-        '              <span>5/5</span>\n'
+        f'              <span>{score}/5</span>\n'
         '            </p>\n'
     )
 
@@ -38,7 +38,8 @@ def render_card(entry, number, preview):
         f"              <p>{escape(paragraph)}</p>"
         for paragraph in entry["paragraphs"]
     )
-    rating = render_preview_rating() if preview and entry.get("illustrative") is True else ""
+    score = 5 if preview and entry.get("illustrative") is True else entry.get("rating")
+    rating = render_rating(score) if type(score) is int and 1 <= score <= 5 else ""
     return f"""          <article class="card testimonial-card" aria-labelledby="testimonial-name-{number}">
             <h3 id="testimonial-name-{number}">{name}</h3>
             <p class="muted testimonial-area">{area}</p>

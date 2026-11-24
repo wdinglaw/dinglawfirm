@@ -68,3 +68,17 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.testimonial-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.testimonial-rating svg {
+  flex: none;
+  fill: #d4af37;
+}

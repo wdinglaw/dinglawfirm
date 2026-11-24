@@ -17,17 +17,32 @@ DISCLAIMER = (
 )
 
 
-def render_card(entry, number):
+def render_preview_rating():
+    star = "M8 0.7 10.2 5.3 15.3 6 11.6 9.6 12.5 14.7 8 12.3 3.5 14.7 4.4 9.6 0.7 6 5.8 5.3Z"
+    stars = "".join(
+        f'<path d="{star}" transform="translate({offset} 0)"/>'
+        for offset in range(0, 90, 18)
+    )
+    return (
+        '            <p class="testimonial-rating">\n'
+        f'              <svg viewBox="0 0 88 16" width="88" height="16" aria-hidden="true" focusable="false">{stars}</svg>\n'
+        '              <span>5/5</span>\n'
+        '            </p>\n'
+    )
+
+
+def render_card(entry, number, preview):
     name = escape(entry["name"])
     area = escape(entry["practice_area"])
     paragraphs = "\n".join(
         f"              <p>{escape(paragraph)}</p>"
         for paragraph in entry["paragraphs"]
     )
+    rating = render_preview_rating() if preview and entry.get("illustrative") is True else ""
     return f"""          <article class="card testimonial-card" aria-labelledby="testimonial-name-{number}">
             <h3 id="testimonial-name-{number}">{name}</h3>
             <p class="muted testimonial-area">{area}</p>
-            <blockquote class="testimonial-quote" id="testimonial-quote-{number}">
+{rating}            <blockquote class="testimonial-quote" id="testimonial-quote-{number}">
 {paragraphs}
             </blockquote>
             <button class="testimonial-toggle" type="button" hidden aria-expanded="false" aria-controls="testimonial-quote-{number}" aria-describedby="testimonial-name-{number}">Read more</button>
@@ -37,7 +52,7 @@ def render_card(entry, number):
 def render_section(entries, preview):
     if not entries:
         return ""
-    cards = "\n".join(render_card(entry, index) for index, entry in enumerate(entries, 1))
+    cards = "\n".join(render_card(entry, index, preview) for index, entry in enumerate(entries, 1))
     note = (
         '          <p class="testimonial-preview-note">Private development preview</p>\n'
         if preview else ""
